@@ -162,6 +162,7 @@ export function SunCompass({
             event.currentTarget.releasePointerCapture(event.pointerId)
         }}
         onKeyDown={(event) => {
+          event.stopPropagation()
           let next: number
           switch (event.key) {
             case 'ArrowRight':
@@ -190,6 +191,7 @@ export function SunCompass({
           event.preventDefault()
           onChange((next + 360) % 360)
         }}
+        onKeyUp={(event) => event.stopPropagation()}
       >
         <svg viewBox="0 0 220 220" aria-hidden="true">
           <circle className="daylight-compass-face" cx="110" cy="110" r="96" />

@@ -43,11 +43,21 @@ try {
   }
   assert.equal(await panel.locator('.daylight-advanced').getAttribute('open'), null)
   assert.equal(await panel.getByRole('spinbutton').count(), 0)
+  await page.evaluate(() => {
+    document.documentElement.dataset.daylightBubbledKeys = ''
+    const record = (event: KeyboardEvent) => {
+      document.documentElement.dataset.daylightBubbledKeys += `${event.type}:${event.key};`
+    }
+    window.addEventListener('keydown', record)
+    window.addEventListener('keyup', record)
+  })
   await compass.press('Home')
   await compass.press('ArrowLeft')
   assert.equal(await compass.getAttribute('aria-valuenow'), '359')
   await compass.press('Shift+ArrowRight')
   assert.equal(await compass.getAttribute('aria-valuenow'), '14')
+  assert.equal(await page.locator('html').getAttribute('data-daylight-bubbled-keys'), '')
+  checks.compassDoesNotTriggerHostShortcuts = true
   assert.match((await compass.getAttribute('aria-valuetext')) ?? '', /North, 14 degrees/)
   const bounds = (await compass.boundingBox())!
   await page.mouse.move(bounds.x + bounds.width - 24, bounds.y + bounds.height / 2)

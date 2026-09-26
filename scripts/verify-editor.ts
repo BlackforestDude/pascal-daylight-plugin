@@ -43,9 +43,19 @@ try {
   assert.equal(await enabled.isChecked(), false)
   await enabled.check()
   const compass = page.getByRole('slider', { name: 'Sun direction', exact: true })
+  await page.evaluate(() => {
+    document.documentElement.dataset.daylightBubbledKeys = ''
+    const record = (event: KeyboardEvent) => {
+      document.documentElement.dataset.daylightBubbledKeys += `${event.type}:${event.key};`
+    }
+    window.addEventListener('keydown', record)
+    window.addEventListener('keyup', record)
+  })
   await compass.press('Home')
   await compass.press('Shift+ArrowRight')
   assert.equal(await compass.getAttribute('aria-valuenow'), '15')
+  assert.equal(await page.locator('html').getAttribute('data-daylight-bubbled-keys'), '')
+  checks.compassDoesNotTriggerHostShortcuts = true
   const advanced = page.locator('.daylight-advanced > summary')
   const jsonDetails = page.locator('.daylight-json > summary')
   await advanced.click()
