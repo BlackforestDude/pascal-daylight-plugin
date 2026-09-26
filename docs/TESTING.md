@@ -11,8 +11,8 @@ tar -xzf source.tar.gz
 cd source
 bun install --frozen-lockfile --ignore-scripts
 bun run check
-bun pm pack --ignore-scripts --filename pascal-daylight-plugin-0.1.0-rc.5.tgz
-shasum -a 256 pascal-daylight-plugin-0.1.0-rc.5.tgz
+bun pm pack --ignore-scripts --filename pascal-daylight-plugin-0.1.0-rc.6.tgz
+shasum -a 256 pascal-daylight-plugin-0.1.0-rc.6.tgz
 ```
 
 Compare the final hash with `release.json` in the review packet. On Linux, `sha256sum` is
@@ -31,6 +31,7 @@ PASCAL_EDITOR_ROOT=/absolute/path/to/reviewed/pascal-editor bun run dev:lab
 The lab listens on `http://127.0.0.1:5188`. In another terminal, run:
 
 ```sh
+bun scripts/verify-controls.ts
 bun scripts/verify-browser.ts
 ```
 
@@ -39,7 +40,12 @@ It opens an isolated headless profile. Its GPU arguments target the tested macOS
 choose the appropriate native GPU configuration when qualifying another operating system.
 Do not report a WebGPU result unless the rendered status identifies WebGPU.
 
-The script verifies closed-roof and window occlusion, native mixed glass/frame slots, opaque
+The controls script verifies pointer/keyboard compass movement, slider/manual agreement,
+atomic invalid edits, preset file round trips, Europe/Zurich time-zone and clock-change
+validation, a 375 px viewport, touch tapping and forced-colour keyboard controls. It records
+screenshots and console errors. This is targeted accessibility coverage, not a WCAG audit.
+
+The rendering script verifies closed-roof and window occlusion, native mixed glass/frame slots, opaque
 paint/restore, 20 warm remounts, competing atmospheres, atomic invalid-preset rejection and no
 horizontal overflow at a 375 px viewport. It records screenshots, measured frames, full
 Three-reported GPU counters, console errors/warnings and network requests. These counters are

@@ -6,7 +6,9 @@ This is a submission candidate, not an official Pascal product or hosted-catalog
 
 ## Capabilities
 
-- Manual compass angles or offline date/location calculations using SunCalc 2.0.2.
+- Drag or tap a sun compass, with keyboard support and live sliders for height and light balance.
+- Native date/time picking in the device time zone; offline solar calculations using SunCalc 2.0.2.
+- Exact numeric values in Advanced, with preset file download/upload and optional JSON tools.
 - Direct sunlight, exposure, and separately labelled unoccluded presentation fill.
 - Strict version-1 JSON preset validation, export and import.
 - Per-viewer atmosphere ownership, competing-atmosphere detection, and cleanup on uninstall.
@@ -19,6 +21,21 @@ transmission or caustics. A roofless scene is a presentation view, not an enclos
 
 A Pascal host must bundle the package first. Open **Plugins → Daylight → Install**,
 then enable Daylight in its panel. Disable any competing atmosphere through its own panel.
+Start in **Visual**: drag the sun, set its height, then adjust **Sunlight strength** or
+**Scene brightness**. **Lift dark areas** is an artistic fill; use **Direct only** for enclosure
+checks. Compass arrow keys move 1° (Shift or Page keys: 15°); Home points north.
+
+Choose **Date & location** for an actual sun position. Enter your project's latitude/longitude,
+then use the date picker. Its time zone is your device's, shown below the field; it does not
+infer the project's time zone from coordinates. Shared presets retain the same absolute moment.
+Invalid dates and daylight-saving gaps/repeated times are rejected; an explicit offset in
+**Advanced** resolves repeated times. **Use current time** updates only the timestamp.
+
+**Advanced** contains exact values, model north alignment and preset files. Expand its JSON
+section for copy/paste or developer/AI workflows. Both interfaces use the same version-1
+configuration API. Sun colour remains the renderer's fixed warm white; no colour picker is
+presented for a setting the plugin does not expose.
+
 Uninstalling Daylight releases its presentation; it does not delete or rewrite authored nodes.
 
 For enclosure checks use shadows on, Rendered shading, full-height walls, stacked levels,

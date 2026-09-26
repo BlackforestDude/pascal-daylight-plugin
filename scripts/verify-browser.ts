@@ -85,6 +85,8 @@ try {
       .getByText('At least one open view is owned by another atmosphere.', { exact: false })
       .waitFor()
     await page.getByRole('checkbox', { name: 'Other atmosphere', exact: true }).uncheck()
+    await page.locator('.daylight-advanced > summary').click()
+    await page.locator('.daylight-json > summary').click()
     await page.getByRole('button', { name: 'Export preset', exact: true }).click()
     const presetInput = page.locator('.pascal-daylight textarea')
     const preset = await presetInput.inputValue()

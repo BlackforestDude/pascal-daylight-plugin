@@ -1,7 +1,8 @@
 .pascal-daylight {
+  --daylight-sun: #efbc64;
   color: var(--sidebar-foreground, #ececef);
   font: inherit;
-  font-size: 12px;
+  font-size: 13px;
   line-height: 1.5;
   padding: 16px;
   min-width: 0;
@@ -11,18 +12,27 @@
 .pascal-daylight *::after {
   box-sizing: border-box;
 }
-.pascal-daylight h2 {
-  font-size: 16px;
-  font-weight: 600;
-  margin: 0 0 4px;
+.daylight-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
 }
-.pascal-daylight h2 small {
-  font-size: 10px;
-  font-weight: 400;
+.pascal-daylight h2 {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+}
+.daylight-status {
   color: var(--muted-foreground, #acacb5);
+  font-size: 11px;
 }
 .pascal-daylight p {
   margin: 8px 0;
+}
+.daylight-intro {
+  color: var(--muted-foreground, #acacb5);
 }
 .pascal-daylight fieldset {
   min-width: 0;
@@ -32,7 +42,7 @@
   margin: 16px 0 0;
 }
 .pascal-daylight legend {
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 600;
   padding: 0 8px 0 0;
 }
@@ -45,15 +55,13 @@
   border: 1px solid var(--border, #414148);
   border-radius: 6px;
   background: var(--sidebar-accent, #29292e);
-  min-height: 32px;
-  padding: 5px 8px;
+  min-height: 44px;
+  padding: 8px;
+  max-width: 100%;
 }
-.pascal-daylight input:focus-visible,
-.pascal-daylight select:focus-visible,
-.pascal-daylight textarea:focus-visible,
-.pascal-daylight button:focus-visible {
+.pascal-daylight :is(input, select, textarea, button, summary, [role="slider"]):focus-visible {
   outline: 2px solid var(--ring, #a0bdfe);
-  outline-offset: 2px;
+  outline-offset: 3px;
 }
 .pascal-daylight button {
   cursor: pointer;
@@ -62,67 +70,179 @@
 .pascal-daylight button:hover {
   background: var(--accent, #3a3a42);
 }
+.pascal-daylight button[aria-pressed="true"] {
+  background: var(--secondary, #393940);
+  border-color: var(--muted-foreground, #acacb5);
+  font-weight: 600;
+}
 .pascal-daylight input[type="number"] {
-  width: 90px;
+  width: 92px;
   font-variant-numeric: tabular-nums;
 }
 .pascal-daylight input[type="checkbox"] {
-  width: 16px;
-  height: 16px;
+  width: 20px;
+  height: 20px;
   min-height: 0;
   accent-color: var(--primary, #9bb8f8);
 }
 .daylight-toggle {
   display: flex;
   align-items: center;
-  gap: 8px;
-  margin: 16px 0;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 48px;
+  margin-top: 12px;
   font-weight: 600;
+  cursor: pointer;
+}
+.daylight-modes {
+  display: flex;
+  gap: 4px;
+}
+.daylight-modes button {
+  flex: 1;
+  font-size: 12px;
+}
+.daylight-compass-group {
+  margin: 12px 0 8px;
+}
+.daylight-compass {
+  width: min(100%, 200px);
+  aspect-ratio: 1;
+  margin: 0 auto;
+  touch-action: none;
+  user-select: none;
+  border-radius: 50%;
+  cursor: grab;
+}
+.daylight-compass:active {
+  cursor: grabbing;
+}
+.daylight-compass svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+.daylight-compass text {
+  text-anchor: middle;
+  fill: var(--muted-foreground, #acacb5);
+  font-size: 11px;
+}
+.daylight-compass-face,
+.daylight-compass-center {
+  fill: var(--sidebar, #202024);
+}
+.daylight-compass-orbit,
+.daylight-compass-axis {
+  fill: none;
+  stroke: var(--border, #414148);
+  stroke-width: 1;
+}
+.daylight-compass-ray {
+  stroke: var(--daylight-sun);
+  stroke-width: 1.5;
+}
+.daylight-compass .daylight-compass-degree {
+  font-size: 24px;
+  font-weight: 500;
+  fill: var(--sidebar-foreground, #ececef);
+  font-variant-numeric: tabular-nums;
+}
+.daylight-compass .daylight-compass-direction {
+  font-size: 10px;
+}
+.daylight-compass-sun {
+  fill: var(--daylight-sun);
+  stroke: #382608;
+  stroke-width: 1.5;
+}
+.daylight-compass-sun > circle:first-child {
+  stroke: none;
+}
+.daylight-compass-help {
+  text-align: center;
+  font-size: 11px;
+}
+.daylight-range {
+  margin: 12px 0;
+}
+.daylight-range-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+.daylight-range-heading output {
+  font-variant-numeric: tabular-nums;
+  font-size: 12px;
+}
+.pascal-daylight input[type="range"] {
+  display: block;
+  width: 100%;
+  height: 44px;
+  margin: 0;
+  padding: 0;
+  accent-color: var(--primary, #9bb8f8);
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+.daylight-range-ends {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: -4px;
+  color: var(--muted-foreground, #acacb5);
+  font-size: 11px;
 }
 .daylight-field {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
+  gap: 8px;
   align-items: center;
   justify-content: space-between;
-  margin: 8px 0;
+  margin: 10px 0;
 }
 .daylight-field > label {
   flex: 1;
   min-width: 100px;
 }
-.daylight-field select {
-  max-width: 100%;
-}
 .daylight-stacked {
   display: flex;
   flex-direction: column;
   gap: 6px;
-  margin: 12px 0;
+  margin: 14px 0;
 }
 .daylight-stacked input,
 .daylight-stacked textarea {
   width: 100%;
   min-width: 0;
 }
+.daylight-stacked input[type="file"] {
+  font-size: 11px;
+}
 .daylight-stacked textarea {
   font-family: monospace;
+  font-size: 12px;
   resize: vertical;
 }
-.daylight-note {
+.daylight-note,
+.daylight-footnote {
   color: var(--muted-foreground, #acacb5);
+  font-size: 12px;
 }
 .daylight-warning {
-  border-left: 2px solid #d8a954;
+  border-left: 2px solid var(--daylight-sun);
   padding-left: 10px;
   color: var(--sidebar-foreground, #ececef);
+  font-size: 12px;
 }
 .daylight-field > .daylight-warning {
   width: 100%;
 }
 ul.daylight-warning {
   list-style: none;
-  margin: 12px 0;
+  margin: 8px 0;
 }
 .daylight-warning li + li {
   margin-top: 8px;
@@ -131,8 +251,76 @@ ul.daylight-warning {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
-  margin: 10px 0;
+  margin: 12px 0;
 }
 .daylight-actions > button {
   flex: 1;
+}
+.pascal-daylight summary {
+  cursor: pointer;
+  min-height: 44px;
+  padding: 12px 0;
+}
+.daylight-advanced {
+  border-top: 1px solid var(--border, #414148);
+  margin-top: 16px;
+}
+.daylight-advanced > summary {
+  font-weight: 600;
+}
+.daylight-advanced > summary span {
+  display: block;
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--muted-foreground, #acacb5);
+  padding-left: 16px;
+}
+.daylight-checks > summary {
+  font-size: 12px;
+}
+.daylight-checks[open] > summary {
+  padding-bottom: 0;
+}
+.daylight-json {
+  margin: 12px 0;
+}
+.daylight-json > summary {
+  font-size: 12px;
+}
+.daylight-solar-result {
+  padding: 10px 0;
+  font-variant-numeric: tabular-nums;
+}
+.pascal-daylight .daylight-footnote {
+  font-size: 11px;
+  margin-top: 14px;
+}
+@media (forced-colors: active) {
+  .daylight-compass text,
+  .daylight-compass .daylight-compass-degree {
+    fill: CanvasText;
+  }
+  .daylight-compass-face,
+  .daylight-compass-center {
+    fill: Canvas;
+  }
+  .daylight-compass-orbit,
+  .daylight-compass-axis,
+  .daylight-compass-ray {
+    stroke: CanvasText;
+  }
+  .daylight-compass-sun {
+    fill: Highlight;
+    stroke: HighlightText;
+  }
+  .pascal-daylight button[aria-pressed="true"] {
+    outline: 2px solid Highlight;
+  }
+}
+
+.pascal-daylight fieldset.daylight-modes,
+.pascal-daylight fieldset.daylight-presets {
+  border: 0;
+  padding: 0;
+  margin-top: 12px;
 }
