@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "enabled": true,
+  "mode": "manual",
+  "azimuth": 0,
+  "elevation": 55,
+  "northOffset": 0,
+  "latitude": 0,
+  "longitude": 0,
+  "instant": "2026-06-21T12:00:00Z",
+  "sunPower": 3,
+  "exposure": 1,
+  "presentationFill": 0
+}

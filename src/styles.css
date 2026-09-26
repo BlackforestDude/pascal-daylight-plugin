@@ -1,0 +1,138 @@
+.pascal-daylight {
+  color: var(--sidebar-foreground, #ececef);
+  font: inherit;
+  font-size: 12px;
+  line-height: 1.5;
+  padding: 16px;
+  min-width: 0;
+}
+.pascal-daylight *,
+.pascal-daylight *::before,
+.pascal-daylight *::after {
+  box-sizing: border-box;
+}
+.pascal-daylight h2 {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0 4px;
+}
+.pascal-daylight h2 small {
+  font-size: 10px;
+  font-weight: 400;
+  color: var(--muted-foreground, #acacb5);
+}
+.pascal-daylight p {
+  margin: 8px 0;
+}
+.pascal-daylight fieldset {
+  min-width: 0;
+  border: 0;
+  border-top: 1px solid var(--border, #414148);
+  padding: 12px 0 4px;
+  margin: 16px 0 0;
+}
+.pascal-daylight legend {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 0 8px 0 0;
+}
+.pascal-daylight input,
+.pascal-daylight select,
+.pascal-daylight textarea,
+.pascal-daylight button {
+  font: inherit;
+  color: inherit;
+  border: 1px solid var(--border, #414148);
+  border-radius: 6px;
+  background: var(--sidebar-accent, #29292e);
+  min-height: 32px;
+  padding: 5px 8px;
+}
+.pascal-daylight input:focus-visible,
+.pascal-daylight select:focus-visible,
+.pascal-daylight textarea:focus-visible,
+.pascal-daylight button:focus-visible {
+  outline: 2px solid var(--ring, #a0bdfe);
+  outline-offset: 2px;
+}
+.pascal-daylight button {
+  cursor: pointer;
+  white-space: normal;
+}
+.pascal-daylight button:hover {
+  background: var(--accent, #3a3a42);
+}
+.pascal-daylight input[type="number"] {
+  width: 90px;
+  font-variant-numeric: tabular-nums;
+}
+.pascal-daylight input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  min-height: 0;
+  accent-color: var(--primary, #9bb8f8);
+}
+.daylight-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 16px 0;
+  font-weight: 600;
+}
+.daylight-field {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+  justify-content: space-between;
+  margin: 8px 0;
+}
+.daylight-field > label {
+  flex: 1;
+  min-width: 100px;
+}
+.daylight-field select {
+  max-width: 100%;
+}
+.daylight-stacked {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 12px 0;
+}
+.daylight-stacked input,
+.daylight-stacked textarea {
+  width: 100%;
+  min-width: 0;
+}
+.daylight-stacked textarea {
+  font-family: monospace;
+  resize: vertical;
+}
+.daylight-note {
+  color: var(--muted-foreground, #acacb5);
+}
+.daylight-warning {
+  border-left: 2px solid #d8a954;
+  padding-left: 10px;
+  color: var(--sidebar-foreground, #ececef);
+}
+.daylight-field > .daylight-warning {
+  width: 100%;
+}
+ul.daylight-warning {
+  list-style: none;
+  margin: 12px 0;
+}
+.daylight-warning li + li {
+  margin-top: 8px;
+}
+.daylight-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 10px 0;
+}
+.daylight-actions > button {
+  flex: 1;
+}

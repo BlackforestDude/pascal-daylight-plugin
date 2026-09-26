@@ -1,0 +1,77 @@
+:root {
+  font:
+    13px / 1.5 system-ui,
+    sans-serif;
+  background: #18181c;
+  color: #e9e9ed;
+  color-scheme: dark;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+main {
+  display: grid;
+  grid-template-columns: 320px minmax(0, 1fr);
+  min-height: 100vh;
+}
+aside {
+  background: #202024;
+  max-height: 100vh;
+  overflow-y: auto;
+}
+.lab-stage {
+  min-width: 0;
+  padding: 16px;
+}
+.lab-toolbar h1 {
+  font-size: 17px;
+  margin: 0;
+}
+.lab-toolbar p {
+  margin: 5px 0 10px;
+  color: #bbbbc6;
+}
+.lab-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+button {
+  background: #303038;
+  color: inherit;
+  border: 1px solid #555560;
+  border-radius: 6px;
+  padding: 7px 12px;
+  cursor: pointer;
+}
+.lab-canvas {
+  width: 100%;
+  height: min(65vh, 650px);
+  min-height: 300px;
+  border: 1px solid #43434c;
+}
+.lab-results {
+  white-space: pre-wrap;
+  font-size: 11px;
+  max-height: 190px;
+  overflow: auto;
+}
+.lab-caption {
+  color: #a9a9b5;
+  font-size: 11px;
+}
+@media (max-width: 720px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+  aside {
+    max-height: 48vh;
+  }
+  .lab-canvas {
+    height: 50vh;
+  }
+}

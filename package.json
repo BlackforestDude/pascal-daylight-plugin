@@ -1,0 +1,85 @@
+{
+  "name": "pascal-daylight-plugin",
+  "version": "0.1.0-rc.5",
+  "private": true,
+  "description": "Offline sun direction and portable presentation presets for Pascal Plugin API v1",
+  "type": "module",
+  "license": "Apache-2.0",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./configuration": {
+      "types": "./dist/configuration.d.ts",
+      "import": "./dist/configuration.js"
+    },
+    "./presentation": {
+      "types": "./dist/presentation-runtime.d.ts",
+      "import": "./dist/presentation-runtime.js"
+    },
+    "./styles.css": "./src/styles.css"
+  },
+  "files": [
+    "dist",
+    "src/styles.css",
+    "README.md",
+    "THIRD-PARTY-NOTICES.md",
+    "docs/INTEGRATION.md",
+    "docs/COMPATIBILITY.md",
+    "LICENSE",
+    "NOTICE"
+  ],
+  "scripts": {
+    "check": "biome check . && bun run check-types && bun test test && bun run build",
+    "format": "biome check --write .",
+    "build": "tsc -p tsconfig.build.json",
+    "check-types": "tsc --noEmit",
+    "test": "bun test test",
+    "dev:lab": "vite --host 127.0.0.1",
+    "build:lab": "vite build",
+    "release": "bun scripts/prepare-release.ts"
+  },
+  "dependencies": {
+    "suncalc": "2.0.2"
+  },
+  "peerDependencies": {
+    "@pascal-app/core": "1.0.3",
+    "@pascal-app/editor": "1.0.3",
+    "@pascal-app/viewer": "1.0.3",
+    "@react-three/fiber": "^9.5.0",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "three": "0.186.0",
+    "zod": ">=4.5.4 <4.6",
+    "zustand": "^5"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.4.16",
+    "@pascal-app/core": "1.0.3",
+    "@pascal-app/editor": "1.0.3",
+    "@pascal-app/viewer": "1.0.3",
+    "@react-three/fiber": "9.6.1",
+    "@react-three/test-renderer": "9.1.0",
+    "@types/blob-stream": "0.1.33",
+    "@types/bun": "1.3.14",
+    "@types/howler": "2.2.13",
+    "@types/pdfkit": "0.17.6",
+    "@types/react": "19.2.17",
+    "@types/react-dom": "19.2.3",
+    "@types/three": "0.184.1",
+    "playwright": "1.63.0",
+    "react": "19.2.7",
+    "react-dom": "19.2.7",
+    "three": "0.186.0",
+    "typescript": "6.0.3",
+    "vite": "8.0.3",
+    "zod": "4.5.4",
+    "zustand": "5.0.14"
+  },
+  "packageManager": "bun@1.3.13",
+  "author": {
+    "name": "BlackforestDude",
+    "url": "https://github.com/BlackforestDude"
+  }
+}
