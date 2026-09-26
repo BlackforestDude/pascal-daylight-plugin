@@ -71,7 +71,7 @@ writeFileSync(artifact, archive)
 const members = run(['tar', '-tzf', artifact]).toString().split('\n').filter(Boolean)
 for (const member of members) {
   if (
-    !/^package\/(dist\/|src\/styles\.css$|docs\/(INTEGRATION|COMPATIBILITY)\.md$|README\.md$|LICENSE$|NOTICE$|THIRD-PARTY-NOTICES\.md$|package\.json$)/.test(
+    !/^package\/(dist\/|src\/styles\.css$|docs\/(INTEGRATION|COMPATIBILITY|TESTING)\.md$|README\.md$|LICENSE$|NOTICE$|THIRD-PARTY-NOTICES\.md$|package\.json$)/.test(
       member,
     )
   )

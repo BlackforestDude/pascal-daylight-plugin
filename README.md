@@ -56,7 +56,10 @@ PASCAL_EDITOR_ROOT=/absolute/path/to/reviewed/pascal-editor bun run dev:lab
 
 Run enclosure, native-glazing and lifecycle checks in the lab. Repeat with `?backend=webgl`.
 Do not interpret geometry/texture counters as a complete GPU-memory measurement.
-See the release's verification report for observed results and remaining host acceptance.
+The browser harness also compares Three's complete reported GPU allocation counters after
+20 warm remounts. [Testing instructions](docs/TESTING.md) cover both renderer backends and
+the integrated editor. See the review packet's verification report for observed results
+and remaining host acceptance.
 
 ## Data and external services
 

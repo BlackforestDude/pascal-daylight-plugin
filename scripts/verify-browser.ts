@@ -68,6 +68,12 @@ try {
       )
       await page.screenshot({ path: path.join(output, `${backend}-${name}.png`), fullPage: true })
       assert.ok(verdict.startsWith('PASS:'), verdict)
+      if (name === 'lifecycle')
+        assert.deepEqual(
+          samples['stress-after'].gpuMemory,
+          samples['stress-before'].gpuMemory,
+          'GPU allocations grew after warm remounts',
+        )
       if (name !== 'lifecycle') {
         const download = page.waitForEvent('download')
         await page.getByRole('button', { name: 'Download measured frames', exact: true }).click()
