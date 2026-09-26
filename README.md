@@ -1,8 +1,22 @@
-# Pascal Daylight
+# Daylight for Pascal
 
-An independent, opt-in sun and lighting-preset plugin for Pascal Plugin API v1.
-Publisher candidate: [BlackforestDude](https://github.com/BlackforestDude).
-This is a submission candidate, not an official Pascal product or hosted-catalog listing.
+**Move the sun. See where the light lands. Save the result.**
+
+A small, offline plugin for exploring sun direction and direct shadows in Pascal.
+Use a visual compass and sliders, or calculate the sun position from a date and location.
+Keep useful settings as portable presets.
+
+[Watch the demo](https://github.com/BlackforestDude/pascal-daylight-plugin/releases/download/v0.1.0-rc.6/Daylight-demo.mp4) ·
+[Download the review release](https://github.com/BlackforestDude/pascal-daylight-plugin/releases/tag/v0.1.0-rc.6) ·
+[Host integration](docs/INTEGRATION.md) ·
+[Report an issue](https://github.com/BlackforestDude/pascal-daylight-plugin/issues)
+
+![Daylight's actual compass and sliders alongside a furnished bathroom](docs/media/daylight-controls.png)
+
+Independent Apache-2.0 project by [BlackforestDude](https://github.com/BlackforestDude).
+**Release candidate: host integration required.** Pascal must bundle the plugin before it
+appears in that host's plugin list. This repository does not install it into Pascal's official
+cloud editor, and no official endorsement or catalog acceptance is claimed.
 
 ## Capabilities
 
@@ -16,6 +30,22 @@ This is a submission candidate, not an official Pascal product or hosted-catalog
 
 This is raster sunlight. It does not simulate bounced light, photometric lux, coloured
 transmission or caustics. A roofless scene is a presentation view, not an enclosed-room test.
+
+Date and location calculate **the sun's direction and height**. Sunlight strength stays at your
+chosen value while the sun is above the horizon and switches off below it. There is no live
+weather, automatic seasonal intensity or sky-light simulation. Presentation fill is an artistic
+control that brightens enclosed areas too.
+
+## See it in use
+
+The demo records the actual release candidate in a local Pascal host, including bathroom and
+living-room details from an existing apartment. It shows the compass, sun-height slider,
+direct-only versus fill, summer/winter sun positions, and preset download.
+
+The host includes the separately reviewed enclosure/glazing shadow corrections. The video is
+not evidence of hosted-cloud availability or calibrated lighting. See the
+[recording notes](docs/DEMO.md) for settings and scope. No apartment graph or model files are
+included in this repository.
 
 ## Use in a project
 
@@ -50,6 +80,9 @@ companion rendering fixes. No ZIP or npm upload installs a plugin into Pascal's 
 Use Bun 1.3.13, Git and tar. No install-time scripts are required.
 
 ```sh
+git clone https://github.com/BlackforestDude/pascal-daylight-plugin.git
+cd pascal-daylight-plugin
+git checkout v0.1.0-rc.6
 bun install --frozen-lockfile --ignore-scripts
 bun run check
 bun run release
@@ -60,6 +93,10 @@ clean installs/checks/builds, packs both, and fails if the package bytes differ.
 the resulting archive into a clean consumer, checks the exported API and writes checksums,
 source revision, file inventory and command logs under `release/`. It never publishes.
 See [release procedure](docs/RELEASING.md).
+
+The release tag points to the exact qualified source. `main` may contain newer documentation
+and demonstration media. The release assets include the original review packet, package,
+checksums and source/host revisions; the packet's preparation-time report remains unchanged.
 
 ## Visual verification
 
@@ -95,6 +132,7 @@ scene migration or public namespace registration is claimed.
 Licensed under [Apache 2.0](LICENSE), with attribution in [NOTICE](NOTICE).
 The package keeps `private: true` solely to prevent accidental npm publication; its release
 archive is installable by a reviewed host. GitHub distribution does not require npm publication.
-Support before publication: the publisher's submission discussion. A repository issue URL
-must be added when the repository exists. Third-party terms are in
-[THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md).
+Use [GitHub Issues](https://github.com/BlackforestDude/pascal-daylight-plugin/issues) for bugs
+and focused improvements. For rendering issues, include the plugin version, Pascal host
+revision, browser, renderer backend and a small reproducible example without private project
+data. Third-party terms are in [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md).
