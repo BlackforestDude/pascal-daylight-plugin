@@ -15,9 +15,16 @@ Download **pascal-daylight-plugin-0.1.0.tgz** and follow the
 A Pascal host must bundle the package and stylesheet. Users then open
 **Plugins → Daylight → Install** and enable it in the Daylight panel.
 
-The attached **Daylight-demo.mp4** shows actual controls, bathroom window shadows, light balance,
-summer/winter sun positions and preset download in an integrated local editor. It was recorded
-with rc.6, whose runtime is unchanged in 0.1.0; the original video end card retains that label.
+## Watch the 32-second intro
+
+https://github.com/user-attachments/assets/071dc4f3-244d-4680-b70d-66ae886febb0
+
+Play directly on GitHub: actual controls, bathroom window shadows, light balance, summer/winter
+sun positions and preset download in an integrated local editor. The footage uses the rc.6
+runtime, which is unchanged in 0.1.0. The original silent **Daylight-demo.mp4** remains attached.
+
+Music: “Beauty Flow” by Kevin MacLeod ([incompetech.com](https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1900008)),
+[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Edited excerpt, normalized and faded.
 
 ## Included
 
@@ -50,5 +57,5 @@ Pascal's official hosted integration, project persistence and fresh-visitor publ
 acceptance remain pending. Publishing this GitHub release does not install the plugin in
 Pascal's cloud editor. No npm publication is part of this release.
 
-[Demo settings](https://github.com/BlackforestDude/pascal-daylight-plugin/blob/v0.1.0/docs/DEMO.md) ·
+[Demo settings](https://github.com/BlackforestDude/pascal-daylight-plugin/blob/main/docs/DEMO.md) ·
 [Feedback and bugs](https://github.com/BlackforestDude/pascal-daylight-plugin/issues)

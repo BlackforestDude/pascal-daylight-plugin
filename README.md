@@ -6,12 +6,17 @@ A small, offline plugin for exploring sun direction and direct shadows in Pascal
 Use a visual compass and sliders, or calculate the sun position from a date and location.
 Keep useful settings as portable presets.
 
-[Watch the demo](https://github.com/BlackforestDude/pascal-daylight-plugin/releases/download/v0.1.0/Daylight-demo.mp4) ·
+[Watch the intro](#watch-the-32-second-intro) ·
 [Download version 0.1.0](https://github.com/BlackforestDude/pascal-daylight-plugin/releases/tag/v0.1.0) ·
 [Host integration](docs/INTEGRATION.md) ·
 [Report an issue](https://github.com/BlackforestDude/pascal-daylight-plugin/issues)
 
-![Daylight's actual compass and sliders alongside a furnished bathroom](docs/media/daylight-controls.png)
+## Watch the 32-second intro
+
+https://github.com/user-attachments/assets/071dc4f3-244d-4680-b70d-66ae886febb0
+
+Actual controls and lighting in a local Pascal host. Play directly here on GitHub.
+[Recording notes and music credit](docs/DEMO.md).
 
 Independent Apache-2.0 project by [BlackforestDude](https://github.com/BlackforestDude).
 **Version 0.1.0 is released. Host integration is required.** Pascal must bundle the plugin before it
@@ -38,7 +43,7 @@ control that brightens enclosed areas too.
 
 ## See it in use
 
-The demo records the actual controls in a local Pascal host, including bathroom and living-room
+The intro records the actual controls in a local Pascal host, including bathroom and living-room
 details from an existing apartment. It shows the compass, sun-height slider, direct-only versus
 fill, summer/winter sun positions, and preset download. It was recorded with rc.6; version 0.1.0
 retains the same runtime code and styles.
@@ -47,6 +52,8 @@ The host includes the separately reviewed enclosure/glazing shadow corrections. 
 not evidence of hosted-cloud availability or calibrated lighting. See the
 [recording notes](docs/DEMO.md) for settings and scope. No apartment graph or model files are
 included in this repository.
+
+![Daylight's actual compass and sliders alongside a furnished bathroom](docs/media/daylight-controls.png)
 
 ## Use in a project
 
