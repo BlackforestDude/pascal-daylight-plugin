@@ -1,6 +1,6 @@
 {
   "name": "pascal-daylight-plugin",
-  "version": "0.1.0-rc.6",
+  "version": "0.1.0",
   "private": true,
   "description": "Offline sun direction and portable presentation presets for Pascal Plugin API v1",
   "type": "module",

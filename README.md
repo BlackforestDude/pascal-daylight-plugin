@@ -6,15 +6,15 @@ A small, offline plugin for exploring sun direction and direct shadows in Pascal
 Use a visual compass and sliders, or calculate the sun position from a date and location.
 Keep useful settings as portable presets.
 
-[Watch the demo](https://github.com/BlackforestDude/pascal-daylight-plugin/releases/download/v0.1.0-rc.6/Daylight-demo.mp4) ·
-[Download the review release](https://github.com/BlackforestDude/pascal-daylight-plugin/releases/tag/v0.1.0-rc.6) ·
+[Watch the demo](https://github.com/BlackforestDude/pascal-daylight-plugin/releases/download/v0.1.0/Daylight-demo.mp4) ·
+[Download version 0.1.0](https://github.com/BlackforestDude/pascal-daylight-plugin/releases/tag/v0.1.0) ·
 [Host integration](docs/INTEGRATION.md) ·
 [Report an issue](https://github.com/BlackforestDude/pascal-daylight-plugin/issues)
 
 ![Daylight's actual compass and sliders alongside a furnished bathroom](docs/media/daylight-controls.png)
 
 Independent Apache-2.0 project by [BlackforestDude](https://github.com/BlackforestDude).
-**Release candidate: host integration required.** Pascal must bundle the plugin before it
+**Version 0.1.0 is released. Host integration is required.** Pascal must bundle the plugin before it
 appears in that host's plugin list. This repository does not install it into Pascal's official
 cloud editor, and no official endorsement or catalog acceptance is claimed.
 
@@ -38,9 +38,10 @@ control that brightens enclosed areas too.
 
 ## See it in use
 
-The demo records the actual release candidate in a local Pascal host, including bathroom and
-living-room details from an existing apartment. It shows the compass, sun-height slider,
-direct-only versus fill, summer/winter sun positions, and preset download.
+The demo records the actual controls in a local Pascal host, including bathroom and living-room
+details from an existing apartment. It shows the compass, sun-height slider, direct-only versus
+fill, summer/winter sun positions, and preset download. It was recorded with rc.6; version 0.1.0
+retains the same runtime code and styles.
 
 The host includes the separately reviewed enclosure/glazing shadow corrections. The video is
 not evidence of hosted-cloud availability or calibrated lighting. See the
@@ -82,7 +83,7 @@ Use Bun 1.3.13, Git and tar. No install-time scripts are required.
 ```sh
 git clone https://github.com/BlackforestDude/pascal-daylight-plugin.git
 cd pascal-daylight-plugin
-git checkout v0.1.0-rc.6
+git checkout v0.1.0
 bun install --frozen-lockfile --ignore-scripts
 bun run check
 bun run release
@@ -94,9 +95,10 @@ the resulting archive into a clean consumer, checks the exported API and writes 
 source revision, file inventory and command logs under `release/`. It never publishes.
 See [release procedure](docs/RELEASING.md).
 
-The release tag points to the exact qualified source. `main` may contain newer documentation
-and demonstration media. The release assets include the original review packet, package,
-checksums and source/host revisions; the packet's preparation-time report remains unchanged.
+The release tag points to the exact source. The release assets include the version 0.1.0
+package, source archive, build metadata and checksums. The original rc.6 review packet is also
+retained as historical host-integration and browser evidence; its package and preparation-time
+report remain unchanged. Use the separate 0.1.0 archive for new integrations.
 
 ## Visual verification
 

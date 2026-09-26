@@ -1,6 +1,6 @@
 # Release demonstration
 
-[Watch or download the MP4](https://github.com/BlackforestDude/pascal-daylight-plugin/releases/download/v0.1.0-rc.6/Daylight-demo.mp4).
+[Watch or download the MP4](https://github.com/BlackforestDude/pascal-daylight-plugin/releases/download/v0.1.0/Daylight-demo.mp4).
 
 The silent, captioned video records real local-editor output and actual Daylight controls.
 It includes an existing apartment's bathroom and living-room details. Camera framing, cuts,
@@ -14,6 +14,9 @@ No rendered light or shadow is added in post-production.
 - Separate host shadow companion: `e2249215aaa13c63a929a03c0e8fefdadd484ec4`.
 - Chrome 153 on macOS, WebGPU/Metal, production host build.
 - Rendered shading, shadows on, full-height walls, stacked levels, textures on.
+
+Version 0.1.0 preserves the recorded rc.6 runtime code and styles. The original video is retained
+unchanged, including its recording-time release-candidate end card.
 
 A private copy of the apartment was used. Its presentation names were made generic and its
 room/spawn helpers hidden for filming. The original project was not edited. The graph and

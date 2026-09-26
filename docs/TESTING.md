@@ -11,17 +11,19 @@ tar -xzf source.tar.gz
 cd source
 bun install --frozen-lockfile --ignore-scripts
 bun run check
-bun pm pack --ignore-scripts --filename pascal-daylight-plugin-0.1.0-rc.6.tgz
-shasum -a 256 pascal-daylight-plugin-0.1.0-rc.6.tgz
+bun pm pack --ignore-scripts --filename pascal-daylight-plugin-0.1.0.tgz
+shasum -a 256 pascal-daylight-plugin-0.1.0.tgz
 ```
 
-Compare the final hash with `release.json` in the review packet. On Linux, `sha256sum` is
+Compare the final hash with `release.json` attached to the same release. On Linux, `sha256sum` is
 equivalent. In the original clean Git checkout, `bun run release` automates two independent
 rebuilds, byte comparison, allowlist checks and a clean-consumer import smoke test.
 
 ## Native rendering lab
 
 Apply the review packet's host patches in their documented order to its pinned Pascal baseline.
+The preserved rc.6 host patch bundles rc.6; to integrate 0.1.0, replace that dependency with the
+0.1.0 archive from the stable release and regenerate the host lockfile before testing.
 Install that host with its lockfile. From this plugin's source, start:
 
 ```sh

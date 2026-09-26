@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.1.0 — 2026-09-26
+
+- Publish the first stable GitHub release under Apache 2.0.
+- Preserve rc.6 runtime code, controls, styles, dependencies and version-1 preset format.
+- Update package metadata, download links and documentation for version 0.1.0.
+- Keep official Pascal cloud integration separate from this independent plugin release.
+
 ## 0.1.0-rc.6 — prepared 2026-09-26
 
 - Put the visual sun compass and light-balance sliders before technical inputs.
@@ -18,4 +25,5 @@
 - Keep companion ceiling/glazing corrections separate from the plugin package.
 - Include a synthetic enclosure/glazing lab without customer projects or assets.
 
-This is a review candidate. Publication and official-cloud deployment are separate steps.
+The rc.5 and rc.6 entries describe earlier review candidates. Official-cloud deployment remains
+a separate host-integration step.
